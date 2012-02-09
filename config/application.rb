@@ -50,6 +50,12 @@ module Crossfit
     # parameters by using an attr_accessible or attr_protected declaration.
     # config.active_record.whitelist_attributes = true
 
+    config.generators do |g|
+      g.stylesheets         false
+      g.test_framework      :rspec, :fixure => true
+      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+    end
+
     # Enable the asset pipeline
     config.assets.enabled = true
 
