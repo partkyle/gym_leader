@@ -1,0 +1,32 @@
+<%= form_for @workout do |f| %>
+
+  <div class="control-group<%= " error" if f.has_errors?(:key) %>">
+    <%= f.label :key %>
+    <div class="control">
+      <%= f.text_field :key %>
+      <%= f.errors_for :key %>
+    </div>
+  </div>
+
+  <div class="control-group<%= " error" if f.has_errors?(:name) %>">
+    <%= f.label :name %>
+    <div class="control">
+      <%= f.text_field :name %>
+      <%= f.errors_for :name %>
+    </div>
+  </div>
+
+  <div class="control-group<%= " error" if f.has_errors?(:description) %>">
+    <%= f.label :description %>
+    <div class="control">
+      <%= f.text_area :description %>
+      <%= f.errors_for :description %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button class: "btn btn-primary" %>
+    <%= link_to 'Cancel', workouts_path, class: "btn" %>
+  </div>
+
+<% end %>
