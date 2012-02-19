@@ -1,9 +1,9 @@
-<%%= form_for @<%= singular_table_name %> do |f| %>
+<%%= form_for @<%= singular_table_name %>, html: {class: 'form-horizontal'} do |f| %>
 
 <% attributes.each do |attribute| -%>
   <div class="control-group<%%= " error" if f.has_errors?(:<%= attribute.name %>) %>">
-    <%%= f.label :<%= attribute.name %> %>
-    <div class="control">
+    <%%= f.label :<%= attribute.name %>, class: 'control-label' %>
+    <div class="controls">
       <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
       <%%= f.errors_for :<%= attribute.name %> %>
     </div>
