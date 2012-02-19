@@ -51,7 +51,6 @@ module Crossfit
     # config.active_record.whitelist_attributes = true
 
     config.generators do |g|
-      g.stylesheets         false
       g.test_framework      :rspec, :fixure => true
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
