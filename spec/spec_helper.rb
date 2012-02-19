@@ -43,7 +43,7 @@ end
 Spork.each_run do
   require 'factory_girl_rails'
   FactoryGirl.factories.clear
-  Dir.glob("#{::Rails.root}/spec/support/factories/*.rb").each { |file| load "#{file}" }
+  Dir.glob("#{::Rails.root}/spec/factories/*.rb").each { |file| load "#{file}" }
 
   # reload all the models
   Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|

@@ -1,9 +1,13 @@
-# Read about factories at http://github.com/thoughtbot/factory_girl
-
 FactoryGirl.define do
   factory :workout do
-    key "MyString"
-    name "MyString"
-    description "MyText"
+    sequence(:key) { |n| "key_#{n}" }
+    sequence(:name) { |n| "name_#{n}" }
+    description """
+
+      This is a long description
+
+      It should span multiple lines
+
+    """
   end
 end

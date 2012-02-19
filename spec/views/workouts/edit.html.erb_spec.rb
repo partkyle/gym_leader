@@ -2,11 +2,7 @@ require 'spec_helper'
 
 describe "workouts/edit" do
   before(:each) do
-    @workout = assign(:workout, stub_model(Workout,
-      :key => "MyString",
-      :name => "MyString",
-      :description => "MyText"
-    ))
+    @workout = build :workout
   end
 
   it "renders the edit workout form" do
