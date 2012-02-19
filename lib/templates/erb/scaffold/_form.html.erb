@@ -1,16 +1,16 @@
 <%%= form_for @<%= singular_table_name %> do |f| %>
 
 <% attributes.each do |attribute| -%>
-  <div class="clearfix <%%= "error" if f.has_errors?(:<%= attribute.name %>) %>">
+  <div class="control-group<%%= " error" if f.has_errors?(:<%= attribute.name %>) %>">
     <%%= f.label :<%= attribute.name %> %>
-    <div class="input">
+    <div class="control">
       <%%= f.<%= attribute.field_type %> :<%= attribute.name %> %>
       <%%= f.errors_for :<%= attribute.name %> %>
     </div>
   </div>
 
 <% end -%>
-  <div class="actions">
+  <div class="form-actions">
     <%%= f.button class: "btn btn-primary" %>
     <%%= link_to 'Cancel', <%= index_helper %>_path, class: "btn" %>
   </div>
