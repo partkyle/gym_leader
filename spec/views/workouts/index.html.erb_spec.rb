@@ -2,27 +2,12 @@ require 'spec_helper'
 
 describe "workouts/index" do
   before(:each) do
-    assign(:workouts, [
-      stub_model(Workout,
-        :key => "Key",
-        :name => "Name",
-        :description => "MyText"
-      ),
-      stub_model(Workout,
-        :key => "Key",
-        :name => "Name",
-        :description => "MyText"
-      )
-    ])
+    @workouts = [create(:workout), create(:workout)]
   end
 
   it "renders a list of workouts" do
     render
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Key".to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "Name".to_s, :count => 2
-    # Run the generator again with the --webrat flag if you want to use webrat matchers
-    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    rendered.should have_selector("tr>td", :content => @workouts.first.key)
+    rendered.should have_selector("tr>td", :content => @workouts.first.name)
   end
 end
