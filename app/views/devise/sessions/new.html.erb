@@ -1,17 +1,37 @@
 <h2>Sign in</h2>
 
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
+<%= form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'} do |f| %>
 
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
+  <div class="control-group<%= " error" if f.has_errors?(:key) %>">
+    <%= f.label :email, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email %>
+      <%= f.errors_for :email %>
+    </div>
+  </div>
+
+  <div class="control-group<%= " error" if f.has_errors?(:key) %>">
+    <%= f.label :password, class: 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password %>
+      <%= f.errors_for :password %>
+    </div>
+  </div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div class="control-group">
+      <div class="controls">
+        <%= f.label :remember_me, class: 'checkbox' do %>
+          <%= f.check_box :remember_me %>
+          Remember Me
+        <% end %>
+      </div>
+    </div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div class="form-actions">
+    <%= f.submit "Sign in", class: 'btn btn-primary' %>
+  </div>
 <% end %>
 
 <%= render "links" %>
