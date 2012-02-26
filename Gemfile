@@ -7,6 +7,9 @@ gem 'rails', '3.2.1'
 
 gem 'pg'
 
+# devise config
+gem 'devise'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
