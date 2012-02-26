@@ -2,7 +2,7 @@
 
 <%= form_for resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-horizontal'} do |f| %>
 
-  <div class="control-group<%= " error" if f.has_errors?(:key) %>">
+  <div class="control-group<%= " error" if f.has_errors?(:email) %>">
     <%= f.label :email, class: 'control-label' %>
     <div class="controls">
       <%= f.text_field :email %>
@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <div class="control-group<%= " error" if f.has_errors?(:key) %>">
+  <div class="control-group<%= " error" if f.has_errors?(:password) %>">
     <%= f.label :password, class: 'control-label' %>
     <div class="controls">
       <%= f.password_field :password %>
