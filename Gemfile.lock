@@ -139,6 +139,9 @@ GEM
       ffi (~> 1.0.9)
       json_pure
       rubyzip
+    simple_form (2.0.0)
+      actionpack (~> 3.0)
+      activemodel (~> 3.0)
     spork (1.0.0rc2)
     sprockets (2.1.2)
       hike (~> 1.2)
@@ -173,5 +176,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.1)
   rspec-rails
+  simple_form
   spork (>= 0.9.0.rc8)
   uglifier (>= 1.0.3)
