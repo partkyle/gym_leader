@@ -1,4 +1,6 @@
 Crossfit::Application.routes.draw do
+  devise_for :users
+
   resources :workouts
 
   root to: "home#index"
