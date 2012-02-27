@@ -1,5 +1,4 @@
 <%%= simple_form_for(@<%= singular_table_name %>) do |f| %>
-  <%%= f.error_notification %>
 
   <div class="form-inputs">
   <%- attributes.each do |attribute| -%>
@@ -8,6 +7,6 @@
   </div>
 
   <div class="form-actions">
-    <%%= f.button :submit %>
+    <%%= f.button :submit, class: 'btn-primary' %>
   </div>
 <%% end %>
