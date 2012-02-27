@@ -25,6 +25,7 @@ class SchedulesController < ApplicationController
   # GET /schedules/new.json
   def new
     @schedule = Schedule.new
+    5.times { @schedule.schedule_workouts.build() }
 
     respond_to do |format|
       format.html # new.html.erb

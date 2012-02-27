@@ -4,6 +4,16 @@
     <%= f.input :day, input_html: {class: 'span2'} %>
   </div>
 
+  <fieldset>
+    <legend>Workouts</legend>
+
+    <div class="form-inputs">
+      <%= f.simple_fields_for :schedule_workout do |sw_form| %>
+        <%= render partial: "schedule_workout/fields", collection: @schedule.schedule_workouts, as: :schedule_workout, locals: {form: sw_form} %>
+      <% end %>
+    </div>
+  </fieldset>
+
   <div class="form-actions">
     <%= f.button :submit, class: 'btn-primary' %>
   </div>
