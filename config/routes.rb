@@ -1,4 +1,6 @@
 Crossfit::Application.routes.draw do
+  resources :schedules
+
   devise_for :users
 
   resources :workouts
