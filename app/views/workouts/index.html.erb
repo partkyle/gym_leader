@@ -1,6 +1,10 @@
 <h1>Listing workouts</h1>
 
-<table>
+<%= link_to new_workout_path, class: 'pull-right' do %>
+  <i class="icon-plus"></i> New Workout
+<% end -%>
+
+<table class="table table-striped">
   <tr>
     <th>Key</th>
     <th>Name</th>
@@ -14,14 +18,10 @@
     <td><%= workout.name %></td>
     <td><%= workout.description %></td>
     <td>
-      <%= link_to 'Show', workout, class: 'btn btn-info' %>
-      <%= link_to 'Edit', edit_workout_path(workout), class: 'btn btn-success' %>
-      <%= link_to 'Destroy', workout, confirm: 'Are you sure?', method: :delete, class: 'btn btn-danger' %>
+      <%= link_to 'Show', workout, class: 'btn btn-small btn-info' %>
+      <%= link_to 'Edit', edit_workout_path(workout), class: 'btn btn-small btn-success' %>
+      <%= link_to 'Destroy', workout, confirm: 'Are you sure?', method: :delete, class: 'btn btn-small btn-danger' %>
     </td>
   </tr>
 <% end %>
 </table>
-
-<br />
-
-<%= link_to 'New Workout', new_workout_path %>
