@@ -1,4 +1,4 @@
-Crossfit::Application.routes.draw do
+GymLeader::Application.routes.draw do
   devise_for :users
 
   resources :workouts

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Crossfit::Application.load_tasks
+GymLeader::Application.load_tasks

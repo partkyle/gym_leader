@@ -1,18 +1,18 @@
 common: &common
   adapter: postgresql
   encoding: unicode
-  username: crossfit
+  username: gymleader
   password:
   pool: 5
 
 development:
   <<: *common
-  database: crossfit_development
+  database: gymleader_development
 
 test:
   <<: *common
-  database: crossfit_test
+  database: gymleader_test
 
 production:
   <<: *common
-  database: crossfit_production
+  database: gymleader
