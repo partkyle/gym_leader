@@ -1,8 +1,4 @@
 common: &common
-  adapter: postgresql
-  encoding: unicode
-  username: gymleader
-  password:
   pool: 5
 
 development:
